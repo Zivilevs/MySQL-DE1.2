@@ -45,6 +45,9 @@ CREATE TABLE car(
   make_year int NOT NULL,
   model_id int NOT NULL,
   engine_id int NOT NULL,
-  transmission_id int NOT NULL);
+  transmission_id int NOT NULL,
+  CONSTRAINT FOREIGN KEY(model_id) REFERENCES model(id) ON DELETE CASCADE,
+  CONSTRAINT FOREIGN KEY(engine_id) REFERENCES engine(id) ON DELETE CASCADE,
+  CONSTRAINT FOREIGN KEY(transmission_id) REFERENCES transmission(id) ON DELETE CASCADE);
 SHOW COLUMNS FROM car;
 MYSQL_INPUT

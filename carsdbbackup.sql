@@ -38,14 +38,9 @@ CREATE TABLE `car` (
   KEY `model_id` (`model_id`),
   KEY `engine_id` (`engine_id`),
   KEY `transmission_id` (`transmission_id`),
-  CONSTRAINT `car_ibfk_1` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`),
-  CONSTRAINT `car_ibfk_2` FOREIGN KEY (`engine_id`) REFERENCES `engine` (`id`),
-  CONSTRAINT `car_ibfk_3` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`),
-  CONSTRAINT `car_ibfk_4` FOREIGN KEY (`engine_id`) REFERENCES `engine` (`id`),
-  CONSTRAINT `car_ibfk_5` FOREIGN KEY (`transmission_id`) REFERENCES `transmission` (`id`),
-  CONSTRAINT `car_ibfk_6` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`),
-  CONSTRAINT `car_ibfk_7` FOREIGN KEY (`engine_id`) REFERENCES `engine` (`id`),
-  CONSTRAINT `car_ibfk_8` FOREIGN KEY (`transmission_id`) REFERENCES `transmission` (`id`)
+  CONSTRAINT `car_ibfk_1` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `car_ibfk_2` FOREIGN KEY (`engine_id`) REFERENCES `engine` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `car_ibfk_3` FOREIGN KEY (`transmission_id`) REFERENCES `transmission` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -197,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-23  9:34:50
+-- Dump completed on 2023-05-23 14:31:00

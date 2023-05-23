@@ -3,7 +3,7 @@
 MYSQL="mysql -u root -p -t -B --database=cars"
 
 $MYSQL << MYSQL_INPUT
-TRUNCATE TABLE car;
+ TABLE car;
 ALTER TABLE model AUTO_INCREMENT = 1;
 INSERT INTO car 
 SELECT null,
@@ -24,11 +24,7 @@ SELECT null,
         AND r.Mileage_kmpl=e.mileage_kmpl;
 
 SELECT COUNT(*) total_rows FROM car;
-ALTER TABLE car ADD FOREIGN KEY(model_id) REFERENCES model(id);
-ALTER TABLE car ADD FOREIGN KEY(engine_id) REFERENCES engine(id);
-ALTER TABLE car ADD FOREIGN KEY(transmission_id) REFERENCES transmission(id);
 DESCRIBE car;
 SELECT * FROM car WHERE LENGTH(name) < 20 LIMIT 5;
-
 SHOW TABLES;
 MYSQL_INPUT

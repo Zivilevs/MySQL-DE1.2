@@ -3,12 +3,14 @@
 MYSQL="mysql -u root -p -t -B --database=cars"
 
 $MYSQL << MYSQL_INPUT
+SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE model;
 ALTER TABLE model AUTO_INCREMENT = 1;
 TRUNCATE TABLE engine;
 ALTER TABLE engine AUTO_INCREMENT = 1;
 TRUNCATE TABLE transmission;
 ALTER TABLE engine AUTO_INCREMENT = 1;
+SET FOREIGN_KEY_CHECKS = 1;
 
 INSERT INTO transmission (type, transmission)
     SELECT DISTINCT Transmission_Type, Transmission FROM cars_raw ORDER BY 1;

@@ -20,3 +20,7 @@ After cloning this repo follow these steps:</br>
 
 You can explore DB cars from your favorite GUI Client like `MySQL WorkBench`, `DBeaver` or other or directly from `mysql` client.
  
+  ## Data Model
+ 
+ ![cars](https://github.com/Zivilevs/MySQL-DE1.2/assets/54817312/33df78b1-546d-4eb4-8c84-56b4e32eb852)
+

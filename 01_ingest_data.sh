@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYSQL="mysql --defaults-file=/home/zivile/Documents/asmeniniai/07_turing/01_module/Turing-project/mysql-carvana-project2/.mysql.cnf -t -B"
+MYSQL="mysql -u root -p -t -B"
 
 $MYSQL << MYSQL_INPUT
 CREATE DATABASE IF NOT EXISTS cars;

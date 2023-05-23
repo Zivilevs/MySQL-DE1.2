@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYSQL="mysql --defaults-file=/home/zivile/Documents/asmeniniai/07_turing/01_module/Turing-project/mysql-carvana-project2/.mysql.cnf -t -B --database=cars"
+MYSQL="mysql -u root -p -t -B --database=cars"
 
 $MYSQL << MYSQL_INPUT
 TRUNCATE TABLE car;

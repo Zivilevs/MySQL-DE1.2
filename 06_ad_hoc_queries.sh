@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYSQL="mysql --defaults-file=/home/zivile/Documents/asmeniniai/07_turing/01_module/Turing-project/mysql-carvana-project2/.mysql.cnf --database=cars -t -B -e"
+MYSQL="mysql -u zivile -p --database=cars -t -B -e"
 
 echo -e "\nWhat are the 5 cheapest cars? Show its model and maker:\n"
 echo "$($MYSQL "SELECT m.name Model_name, m.maker, c.mileage_run, c.num_of_owners, c.color, c.price, c.make_year

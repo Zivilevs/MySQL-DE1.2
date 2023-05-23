@@ -30,7 +30,4 @@ INSERT INTO engine(type, fuel_type, fuel_tank, cc_displacement, torque_nm, power
                         Emission, Mileage_kmpl FROM cars_raw;
 SELECT COUNT(*) total FROM engine;
 SELECT * FROM engine;
-
-
 MYSQL_INPUT
-

@@ -48,7 +48,3 @@ CREATE TABLE car(
   transmission_id int NOT NULL);
 SHOW COLUMNS FROM car;
 MYSQL_INPUT
-
-#CONSTRAINT car_m_1 FOREIGN KEY (model_id) REFERENCES model(id),
-#CONSTRAINT car_e_2 FOREIGN KEY (engine_id) REFERENCES engine(id),
-#CONSTRAINT car_t_3 FOREIGN KEY (transmission_id) REFERENCES transmission(id));

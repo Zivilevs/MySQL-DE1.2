@@ -13,15 +13,22 @@ SELECT null,
         Color,
         CAST(REGEXP_REPLACE(Price,',','') AS SIGNED),
         Make_Year,
-        t.id,
         m.id,
-        e.id
+        e.id,
+        t.id
     FROM cars_raw r, transmission t, model m, engine e
     WHERE r.Transmission=t.transmission AND r.Transmission_Type=t.type AND
         r.Model=m.name AND r.Make=m.maker AND r.Body_Type=m.body_type AND r.Seating_Capacity=m.seating_capacity AND
         r.Engine_Type=e.type AND r.Fuel_Type=e.fuel_type AND r.Fuel_Tank_Capacity=e.fuel_tank AND
         r.CC_Displacement=e.cc_displacement AND r.Torque_nm=e.torque_nm AND r.Power_bhp=e.power_bhp AND r.Emission=e.emission
         AND r.Mileage_kmpl=e.mileage_kmpl;
+
 SELECT COUNT(*) total_rows FROM car;
+ALTER TABLE car ADD FOREIGN KEY(model_id) REFERENCES model(id);
+ALTER TABLE car ADD FOREIGN KEY(engine_id) REFERENCES engine(id);
+ALTER TABLE car ADD FOREIGN KEY(transmission_id) REFERENCES transmission(id);
+DESCRIBE car;
+SELECT * FROM car WHERE LENGTH(name) < 20 LIMIT 5;
+
 SHOW TABLES;
 MYSQL_INPUT
